@@ -6,4 +6,3 @@ try:
     print(float(work_hour) * float(wage_rate) + float(bonus))
 except Exception as err:
     print({err})
-
