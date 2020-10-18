@@ -11,7 +11,7 @@
 
 def create_new_file(text_ins):
     try:
-        with open("new_file_numbers.txt", 'w') as f_obj:
+        with open("hw_5_4_new_file_numbers.txt", 'w') as f_obj:
             f_obj.write(text_ins)
             print(f"В файл {f_obj.name} добавлен текст:\n{text_ins}")
     except IOError as err:
