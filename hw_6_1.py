@@ -5,18 +5,21 @@
     третьего (зеленый) — на ваше усмотрение.
     Переключение между режимами должно осуществляться только в указанном порядке (красный, желтый, зеленый).
     Проверить работу примера, создав экземпляр и вызвав описанный метод.
+
+    Задачу можно усложнить, реализовав проверку порядка режимов,
+    и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 """
 from time import sleep
 from itertools import cycle
 
 class TrafficLight:
-    _color = {"Красный": 7, "Желтый": 2, "Зеленый": 4}
+    __color = {"Красный": 7, "Желтый": 2, "Зеленый": 4}
 
     def running(self, repeat: int):
         i = 1
-        for el in cycle(TrafficLight._color.items()):
+        for el in cycle(TrafficLight.__color.items()):
             if i <= repeat:
-                print(f" {el[0]} ", end='')
+                print(f"{el[0]} ", end='')
                 for el in range(el[1]):
                     print(".", end='')
                     sleep(1)
