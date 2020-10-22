@@ -10,23 +10,19 @@
     и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 """
 from time import sleep
-from itertools import cycle
 
 class TrafficLight:
     __color = {"Красный": 7, "Желтый": 2, "Зеленый": 4}
 
-    def running(self, repeat: int):
+    def running(self):
         i = 1
-        for el in cycle(TrafficLight.__color.items()):
-            if i <= repeat:
-                print(f"{el[0]} ", end='')
-                for el in range(el[1]):
-                    print(".", end='')
-                    sleep(1)
-                print('')
-                i += 1
-            else:
-                break
+        for el in TrafficLight.__color.items():
+            print(f"{el[0]} ", end='')
+            for el in range(el[1]):
+                print(".", end='')
+                sleep(1)
+            print('')
+            i += 1
 
 my_traffic_light = TrafficLight()
-my_traffic_light.running(10)
+my_traffic_light.running()
