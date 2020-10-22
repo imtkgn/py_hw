@@ -15,5 +15,5 @@ class Road:
     def calc_weight(self):
         return (self._length * self._width * 25 * 5) / 1000
 
-my_class = Road(4000, 20)
+my_class = Road(10000, 20)
 print(f"Необходимо {my_class.calc_weight()} тонн асфальта.")
