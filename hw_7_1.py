@@ -22,9 +22,12 @@ class Matrix:
 
     def __add__(self, other):
         list_sum_mtx = []
-        for list_i, list_j in zip(self.matrix_list, other.matrix_list):
-            list_sum_mtx.append([(el_i + el_j) for el_i, el_j in zip(list_i, list_j)])
-        return Matrix(list_sum_mtx)
+        try:
+            for list_i, list_j in zip(self.matrix_list, other.matrix_list):
+                list_sum_mtx.append([(el_i + el_j) for el_i, el_j in zip(list_i, list_j)])
+            return Matrix(list_sum_mtx)
+        except Exception as err:
+            return f'Ошибка: {err}'
 
 
 my_obj_1 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
